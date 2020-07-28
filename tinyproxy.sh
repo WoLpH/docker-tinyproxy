@@ -140,9 +140,9 @@ setFilter(){
 
 setAnon(){
     screenOut "Setting up DisableViaHeader."
-    sed -i -e"s/#DisableViaHeader Yes/DisableViaHeader $DisableViaHeader/" $PROXY_CONF
+    sed -i -e"s/#DisableViaHeader .*/DisableViaHeader Yes/" $PROXY_CONF
     screenOut "Setting up BindSame."
-    sed -i -e"s/#BindSame Yes/BindSame $BindSame/" $PROXY_CONF
+    sed -i -e"s/#BindSame .*/BindSame Yes/" $PROXY_CONF
 }
 
 startService() {
