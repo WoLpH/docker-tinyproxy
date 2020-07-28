@@ -181,10 +181,14 @@ setFilter
 setAnon
 # Enable log to file
 enableLogFile
-# Start Tinyproxy
-startService
-# Tail Tinyproxy log
-tailLog
-# End
-screenOut "$PROG_NAME script ended." && echo
-exit 0
+
+# # Start Tinyproxy
+# startService
+# # Tail Tinyproxy log
+# tailLog
+# # End
+# screenOut "$PROG_NAME script ended." && echo
+# exit 0
+
+exec /usr/bin/tinyproxy -c $PROXY_CONF -d
+
